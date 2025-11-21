@@ -21,7 +21,9 @@
   <body>
     <main class="flex p-0 m-0">
       <%= render "shared/header_admin" %>
-      <%= yield %>
+     <div class="flex-grow p-6 bg-gray-50 min-h-screen">
+       <%= yield %>
+     </div>
     </main>
   </body>
 </html>
