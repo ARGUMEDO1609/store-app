@@ -8,7 +8,7 @@
     </p>
   <% end %>
 
-  <div class="flex justify-between items-center mb-6">
+  <div class="flex justify-between items-center mb-8">
     <h1 class="font-bold text-4xl">Categories</h1>
 
     <%= link_to "New category",
@@ -22,6 +22,10 @@
         <thead class="bg-gray-100">
           <tr>
             <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700 border">
+              Image
+            </th>
+            
+            <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700 border">
               Name
             </th>
             <th class="px-4 py-3 text-left text-sm font-semibold text-gray-700 border">
@@ -33,13 +37,16 @@
           </tr>
         </thead>
 
-        <tbody class="divide-y divide-gray-200 bg-white">
-          <% @categories.each do |category| %>
-            <tr id="<%= dom_id(category) %>" class="hover:bg-gray-50 transition">
-           
-              <td class="px-4 py-3 border align-top">
-                <%= category.name %>
-              </td>
+  <tbody class="divide-y divide-gray-200 bg-white">
+    <% @categories.each do |category| %>
+      <tr id="<%= dom_id(category) %>" class="hover:bg-gray-50 transition">
+        <td class="px-4 py-3 border align-top">
+          <%= category.image.present? ? image_tag(category.image.variant(:thumb)) : image_tag("https://placehold.co/50x50") %>
+        </td>
+
+        <td class="px-4 py-3 border align-top">
+          <%= category.name %>
+        </td>
 
            
               <td class="px-4 py-3 border align-top">

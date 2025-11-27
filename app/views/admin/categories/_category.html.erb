@@ -9,9 +9,9 @@
     <%= category.description %>
   </p>
   
-  <div class="my-5">
+   <div class="my-5">
     <strong class="block font-medium mb-1">Image:</strong>
-    <%= category.image.present? ? image_tag(category.image) : image_tag("https://via.placeholder.com/50") %> 
+    <%= category.image.present? ? image_tag(category.image) : image_tag("https://placehold.co/50x50") %> 
   </div>
 
   <% if action_name != "show" %>
