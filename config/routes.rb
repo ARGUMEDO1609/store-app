@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     root to: "admin#index", as: :admin_root
   end
   
-    namespace :admin, path: '', as: '' do
+    namespace :admin do
     resources :categories
+    resources :products
   end
   get "admin" => "admin#index"
 end

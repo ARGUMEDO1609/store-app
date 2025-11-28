@@ -20,7 +20,7 @@ class Admin::CategoriesController < AdminController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: "Category was successfully created." }
+        format.html { redirect_to admin_category_path(@category), notice: "Category was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -30,7 +30,7 @@ class Admin::CategoriesController < AdminController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: "Category was successfully updated.", status: :see_other }
+        format.html { redirect_to admin_category_path(@category), notice: "Category was successfully updated.", status: :see_other }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -41,7 +41,7 @@ class Admin::CategoriesController < AdminController
     @category.destroy!
 
     respond_to do |format|
-      format.html { redirect_to categories_path, notice: "Category was successfully destroyed.", status: :see_other }
+      format.html { redirect_to admin_categories_path, notice: "Category was successfully destroyed.", status: :see_other }
     end
   end
 
